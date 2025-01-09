@@ -1,10 +1,16 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>azure_app_pankaj</RootNamespace>
+    <ApplicationInsightsResourceId>/subscriptions/54ce3800-5cf0-4920-a845-297d90a280b5/resourceGroups/az-cource-rg/providers/microsoft.insights/components/azure-app-pankaj</ApplicationInsightsResourceId>
+    <UserSecretsId>f010ffb2-3b9a-4b52-adcd-5b3d79526eee</UserSecretsId>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.21.0" />
+  </ItemGroup>
 
 </Project>
