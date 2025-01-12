@@ -1,0 +1,55 @@
+﻿@page
+@model azure_app_pankaj.Pages.PersonAddModel
+@{
+}
+<form method="post">
+    <div class="row">
+        <div class="col">
+            <input type="text" class="form-control" name="Name" placeholder="Enter Name">
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" name="Email" placeholder="Email">
+        </div>
+
+        <div class="col">
+            <input type="text" class="form-control" name="Phone" placeholder="Phone">
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" name="Address" placeholder="Address">
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" name="City" placeholder="City">
+        </div>
+    </div>
+    <button type="submit">
+        Submit
+    </button>
+</form>
+
+<hr />
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>City</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Persons != null && Model.Persons.Count > 0)
+        {
+            @foreach (var items in Model.Persons)
+            {
+                <tr>
+                    <td>@items.Name</td>
+                    <td>@items.Email</td>
+                    <td>@items.Phone</td>
+                    <td>@items.Address</td>
+                    <td>@items.City</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
