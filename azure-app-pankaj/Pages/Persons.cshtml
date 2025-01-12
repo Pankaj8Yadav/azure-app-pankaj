@@ -1,0 +1,61 @@
+﻿@page
+@model azure_app_pankaj.Pages.PersonsModel
+@{
+}
+
+<h2>Manage Persons</h2>
+<form method="post">
+    <div class="mb-3">
+        <label for="Name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="Name" name="Name" placeholder="Enter your name">
+    </div>
+
+    <div class="mb-3">
+        <label for="Email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="Email" name="Email" placeholder="Enter your email">
+    </div>
+
+    <div class="mb-3">
+        <label for="Phone" class="form-label">Phone</label>
+        <input type="text" class="form-control" id="Phone" name="Phone" placeholder="Enter your phone number">
+    </div>
+
+    <div class="mb-3">
+        <label for="Address" class="form-label">Address</label>
+        <textarea class="form-control" id="Address" name="Address" rows="3" placeholder="Enter your address"></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label for="City" class="form-label">City</label>
+        <input type="text" class="form-control" id="City" name="City" placeholder="Enter your city">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<hr />
+
+<table class="table tavle-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Address</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Persons != null && Model.Persons.Count > 0)
+        {
+            @foreach (var item in Model.Persons)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Email</td>
+                    <td>@item.Phone</td>
+                    <td>@item.Address @item.City</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
